@@ -30,7 +30,12 @@ Coming Soon
 ```
 # Issue
 If the container does not run automatically when your VPS restarts, create a cron job.
+## RouterOS 6
 ```
-(sudo crontab -l ; echo "@reboot /usr/bin/docker start mikrotik-chr") | sudo crontab -
+(sudo crontab -l ; echo "@reboot /usr/bin/docker start mikrotik-chr-6") | sudo crontab -
+```
+## RouterOS 6
+```
+(sudo crontab -l ; echo "@reboot /usr/bin/docker start mikrotik-chr-7") | sudo crontab -
 ```
 
