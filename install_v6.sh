@@ -28,9 +28,9 @@ CMD ["qemu-system-x86_64", "-m", "256M", "-smp", "1", "-hda", "/chr-6.49.17.qcow
 EOF
 
 # Build Docker Image
-sudo docker build -t mikrotik-chr .
+sudo docker build -t mikrotik-chr-6 .
 
 # Jalankan Container MikroTik CHR
-sudo docker run --name mikrotik-chr --restart unless-stopped -p 8291:8291 -p 8728:8728 -p 8729:8729 -p 2222:22 -p 80:80 -p 443:443 -p 21:21 mikrotik-chr
+sudo docker run --name mikrotik-chr-6 --restart unless-stopped -p 8291:8291 -p 8728:8728 -p 8729:8729 -p 2222:22 -p 80:80 -p 443:443 -p 21:21 mikrotik-chr-6
 
-echo "MikroTik CHR telah berhasil diinstal dan dijalankan dalam Docker."
+echo "MikroTik CHR telah berhasil diinstal dan dijalankan dalam Docker dengan nama mikrotik-chr-6."
