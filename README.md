@@ -25,10 +25,18 @@ bash <(wget -qO- https://raw.githubusercontent.com/safrinnetwork/Auto-Install-Mi
 ```
 docker pull safrinnetwork/mikrotik-chr-6
 ```
+- Run
+```
+sudo docker run --name mikrotik-chr-6 --restart unless-stopped -p 8291:8291 -p 8728:8728 -p 8729:8729 -p 2222:22 -p 80:80 -p 443:443 -p 21:21 safrinnetwork/mikrotik-chr-6:latest
+```
 ### RouterOS 7
 - Pull
 ```
 docker pull safrinnetwork/mikrotik-chr-7
+```
+- Run
+```
+sudo docker run --name mikrotik-chr-7 --restart unless-stopped -p 8291:8291 -p 8728:8728 -p 8729:8729 -p 2222:22 -p 80:80 -p 443:443 -p 21:21 safrinnetwork/mikrotik-chr-7:latest
 ```
 # Issue
 If the container does not run automatically when your VPS restarts, create a cron job.
