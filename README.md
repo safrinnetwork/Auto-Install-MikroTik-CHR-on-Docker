@@ -21,12 +21,14 @@ bash <(wget -qO- https://raw.githubusercontent.com/safrinnetwork/Auto-Install-Mi
 ```
 # Docker Hub Image
 ### RouterOS 6
+- Pull
 ```
-Coming Soon
+docker pull safrinnetwork/mikrotik-chr-6
 ```
 ### RouterOS 7
+- Pull
 ```
-Coming Soon
+docker pull safrinnetwork/mikrotik-chr-7
 ```
 # Issue
 If the container does not run automatically when your VPS restarts, create a cron job.
