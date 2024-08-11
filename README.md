@@ -1,5 +1,6 @@
 # Auto Install MikroTik CHR di Docker
 - ENG [GitHub Pages]([https://pages.github.com/] (https://github.com/safrinnetwork/Auto-Install-MikroTik-CHR-on-Docker/blob/main/README.eng.md)
+- [Contribution guidelines for this project](docs/CONTRIBUTING.md)
 - Ini adalah skrip otomatis yang dapat menjalankan image Mikrotik CHR di dalam container Docker pada VPS non-KVM.
 # Build Image Lokal dengan Skrip Otomatis
 ### RouterOS 6
