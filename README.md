@@ -61,7 +61,7 @@ sudo docker run --name mikrotik-chr-6 --restart unless-stopped -p 7171:8291 -p 7
 sudo docker run --name mikrotik-chr-7 --restart unless-stopped -p 7171:8291 -p 7272:8728 -p 7373:8729 -p 7474:22 -p 7575:80 -p 7676:443 -p 7777:21 -p 7878:23 safrinnetwork/mikrotik-chr-7:latest
 ```
 - Deskripsi Port Kustom
-  - Winbox : 7373
+  - Winbox : 7171
   - Api : 7272
   - Api SSL : 7373
   - FTP : 7777
