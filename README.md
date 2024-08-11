@@ -91,3 +91,5 @@ sudo crontab -e
 ```
 @reboot sudo docker start mikrotik-chr-7
 ```
+### Masih bingung ?
+Silahkan tonton video panduanya https://youtu.be/m6kKRtTjtzM
