@@ -24,13 +24,25 @@ RUN apt-get update && apt-get install -y qemu-user-static qemu-system-x86
 COPY chr-7.15.3.qcow2 /chr-7.15.3.qcow2
 
 # Define command to run the MikroTik CHR image
-CMD ["qemu-system-x86_64", "-m", "256M", "-smp", "1", "-hda", "/chr-7.15.3.qcow2", "-nographic", "-nic", "user,hostfwd=tcp::8291-:8291,hostfwd=tcp::8728-:8728,hostfwd=tcp::8729-:8729,hostfwd=tcp::22-:22,hostfwd=tcp::80-:80,hostfwd=tcp::443-:443,hostfwd=tcp::21-:21"]
+CMD ["qemu-system-x86_64", "-m", "256M", "-smp", "1", "-hda", "/chr-7.15.3.qcow2", "-nographic", "-nic", "user,hostfwd=tcp::7101-:21,hostfwd=tcp::7102-:23,hostfwd=tcp::7103-:22,hostfwd=tcp::7104-:80,hostfwd=tcp::7105-:443,hostfwd=tcp::7106-:8291,hostfwd=tcp::7107-:8728,hostfwd=tcp::7108-:8729,hostfwd=tcp::7109-:1723,hostfwd=tcp::7110-:1701,hostfwd=tcp::7111-:1194"]
 EOF
 
 # Build Docker Image
 sudo docker build -t mikrotik-chr-7 .
 
 # Jalankan Container MikroTik CHR
-sudo docker run --name mikrotik-chr-7 --restart unless-stopped -p 8291:8291 -p 8728:8728 -p 8729:8729 -p 2222:22 -p 80:80 -p 443:443 -p 21:21 mikrotik-chr-7
+sudo docker run --name mikrotik-chr-7 --restart unless-stopped \
+-p 7101:21 \
+-p 7102:23 \
+-p 7103:22 \
+-p 7104:80 \
+-p 7105:443 \
+-p 7106:8291 \
+-p 7107:8728 \
+-p 7108:8729 \
+-p 7109:1723 \
+-p 7110:1701 \
+-p 7111:1194 \
+mikrotik-chr-7
 
 echo "MikroTik CHR telah berhasil diinstal dan dijalankan dalam Docker dengan nama mikrotik-chr-7."
