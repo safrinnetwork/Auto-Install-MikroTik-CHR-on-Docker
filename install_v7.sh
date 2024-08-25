@@ -49,29 +49,29 @@ EOF
 # Build Docker Image
 sudo docker build -t mikrotik-chr-7 .
 
-# Jalankan Container MikroTik CHR
+# Jalankan Container MikroTik CHR tanpa komentar
 sudo docker run --name mikrotik-chr-7 --restart unless-stopped \
--p 7101:22 \   # SSH
--p 7102:21 \   # FTP
--p 7103:23 \   # Telnet
--p 7104:80 \   # HTTP
--p 7105:443 \  # HTTPS
--p 7106:8291 \ # Winbox
--p 7107:8728 \ # MikroTik API
--p 7108:8729 \ # MikroTik API-SSL
--p 7109:1723 \ # PPTP
--p 7110:1701/udp \ # L2TP
--p 7111:1194/udp \ # OpenVPN
--p 7112:179 \  # BGP
--p 7113:2000 \ # MikroTik Bandwidth Test Server
--p 7114:1812/udp \ # Radius Authentication
--p 7115:1813/udp \ # Radius Accounting
--p 7116:2210 \ # The Dude Server
--p 7117:514/udp \ # Syslog
--p 7118:161/udp \ # SNMP
--p 7119:2055/udp \ # NetFlow
--p 7120:123/udp \ # NTP
--p 7121:53/udp \  # DNS \
+-p 7101:22 \
+-p 7102:21 \
+-p 7103:23 \
+-p 7104:80 \
+-p 7105:443 \
+-p 7106:8291 \
+-p 7107:8728 \
+-p 7108:8729 \
+-p 7109:1723 \
+-p 7110:1701/udp \
+-p 7111:1194/udp \
+-p 7112:179 \
+-p 7113:2000 \
+-p 7114:1812/udp \
+-p 7115:1813/udp \
+-p 7116:2210 \
+-p 7117:514/udp \
+-p 7118:161/udp \
+-p 7119:2055/udp \
+-p 7120:123/udp \
+-p 7121:53/udp \
 mikrotik-chr-7
 
 echo "MikroTik CHR telah berhasil diinstal dan dijalankan dalam Docker dengan nama mikrotik-chr-7."
