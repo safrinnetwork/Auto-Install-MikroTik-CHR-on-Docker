@@ -71,7 +71,7 @@ sudo docker run --name mikrotik-chr-7 --restart unless-stopped \
 -p 7118:161/udp \ # SNMP
 -p 7119:2055/udp \ # NetFlow
 -p 7120:123/udp \ # NTP
--p 7121:53/udp \  # DNS
+-p 7121:53/udp \  # DNS \
 mikrotik-chr-7
 
 echo "MikroTik CHR telah berhasil diinstal dan dijalankan dalam Docker dengan nama mikrotik-chr-7."
