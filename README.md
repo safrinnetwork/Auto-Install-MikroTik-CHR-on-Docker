@@ -125,7 +125,7 @@ sudo crontab -e
 ```
 sudo crontab -e
 ```
-- Tambahkan perintah ini
+Tambahkan perintah ini
 ```
 @reboot sudo docker start ros7
 ```
