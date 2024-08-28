@@ -1,7 +1,8 @@
 # Auto Install MikroTik CHR di Docker
 - [Readme EN](https://github.com/safrinnetwork/Auto-Install-MikroTik-CHR-on-Docker/blob/main/README.eng.md)
 - Ini adalah skrip otomatis yang dapat menjalankan image Mikrotik CHR di dalam container Docker pada VPS non-KVM.
-# Build Image Lokal dengan Skrip Otomatis
+
+# Membangun Image Dengan Skrip Otomatis
 ### RouterOS 6
 ```
 bash <(wget -qO- https://raw.githubusercontent.com/safrinnetwork/Auto-Install-MikroTik-CHR-on-Docker/main/RoS6/v6.sh)
@@ -12,17 +13,17 @@ bash <(wget -qO- https://raw.githubusercontent.com/safrinnetwork/Auto-Install-Mi
 bash <(wget -qO- https://raw.githubusercontent.com/safrinnetwork/Auto-Install-MikroTik-CHR-on-Docker/main/RoS7/v7.sh)
 ```
 
-# Image Docker Hub
+# Pull Langsung Dari Repository Docker Hub
 ### RouterOS 6
 Pull
 ```
 docker pull safrinnetwork/ros6
 ```
-Jalankan
+Menjalankan Image Kedalam Container
 ```
 sudo docker run --name ros6 --restart unless-stopped -p 8291:8291 -p 8728:8728 -p 8729:8729 -p 2222:22 -p 8080:80 -p 443:443 -p 2121:21 safrinnetwork/ros6:latest
 ```
-Contoh Lengkap Dengan Pemetaan Port
+Contoh Menjalankan Image Kedalam Container Dengan Pemetaan Port
 ```
 docker run --name ros6 --restart unless-stopped \
     -p 7000:8291 \
@@ -54,11 +55,11 @@ Pull
 ```
 docker pull safrinnetwork/ros7
 ```
-Jalankan
+Menjalankan Image Kedalam Container
 ```
 sudo docker run --name ros7 --restart unless-stopped -p 8291:8291 -p 8728:8728 -p 8729:8729 -p 2222:22 -p 8080:80 -p 443:443 -p 2121:21 safrinnetwork/ros7:latest
 ```
-Contoh Lengkap Dengan Pemetaan Port
+Contoh Menjalankan Image Kedalam Container Dengan Pemetaan Port
 ```
 docker run --name ros6 --restart unless-stopped \
     -p 7000:8291 \
@@ -84,6 +85,29 @@ docker run --name ros6 --restart unless-stopped \
     -p 7020:1813/udp \
     ros6
 ```
+
+# Dockerfile
+Jika anda ingin membangun image dengan Dockerfile anda bisa langsung melakukan cloning pada repository ini
+
+Cloning Repository
+```
+git clone https://github.com/safrinnetwork/Auto-Install-MikroTik-CHR-on-Docker/
+```
+RouterOS 6
+```
+cd RoS6
+```
+```
+docker build -t safrinnetwork/ros6 .
+```
+RouterOS 7
+```
+cd RoS7
+```
+```
+docker build -t safrinnetwork/ros7 .
+```
+Kemudian anda bisa menjalankan container dengan image yang sudah dibuat dari Dockerfile dengan contoh perintah menjalankan image yang ada di repository ini
 
 # Expose Port
 | Service          | Protocol | Port |
