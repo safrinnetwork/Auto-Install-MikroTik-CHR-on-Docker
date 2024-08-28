@@ -14,15 +14,15 @@ bash <(wget -qO- https://raw.githubusercontent.com/safrinnetwork/Auto-Install-Mi
 
 # Image Docker Hub
 ### RouterOS 6
-- Pull
+Pull
 ```
 docker pull safrinnetwork/ros6
 ```
-- Jalankan
+Jalankan
 ```
 sudo docker run --name ros6 --restart unless-stopped -p 8291:8291 -p 8728:8728 -p 8729:8729 -p 2222:22 -p 8080:80 -p 443:443 -p 2121:21 safrinnetwork/ros6:latest
 ```
-- Contoh Lengkap Dengan Pemetaan Port
+Contoh Lengkap Dengan Pemetaan Port
 ```
 docker run --name ros6 --restart unless-stopped \
     -p 7000:8291 \
@@ -50,15 +50,15 @@ docker run --name ros6 --restart unless-stopped \
 ```
 
 ### RouterOS 7
-- Pull
+Pull
 ```
 docker pull safrinnetwork/ros7
 ```
-- Jalankan
+Jalankan
 ```
 sudo docker run --name ros7 --restart unless-stopped -p 8291:8291 -p 8728:8728 -p 8729:8729 -p 2222:22 -p 8080:80 -p 443:443 -p 2121:21 safrinnetwork/ros7:latest
 ```
-- Contoh Lengkap Dengan Pemetaan Port
+Contoh Lengkap Dengan Pemetaan Port
 ```
 docker run --name ros6 --restart unless-stopped \
     -p 7000:8291 \
@@ -112,16 +112,16 @@ docker run --name ros6 --restart unless-stopped \
 Jika container tidak berjalan otomatis ketika VPS Anda reboot, buatlah cron job.
 
 ### RouterOS 6
-- Buka crontab
+Buka crontab
 ```
 sudo crontab -e
 ```
-- Tambahkan perintah ini
+Tambahkan perintah ini
 ```
 @reboot sudo docker start ros6
 ```
 ### RouterOS 7
-- Buka crontab
+Buka crontab
 ```
 sudo crontab -e
 ```
